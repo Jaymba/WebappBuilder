@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Jaymba/WebappBuilder#readme",
   "devDependencies": {
-    "electron": "^33.0.2",
-    "electron-packager": "^17.1.2"
+    "@electron/packager": "^18.3.5",
+    "electron": "^33.0.2"
   }
 }
