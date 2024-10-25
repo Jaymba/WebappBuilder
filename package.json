@@ -1,0 +1,23 @@
+{
+  "name": "webappbuilder",
+  "version": "1.0.0",
+  "description": "Builds WebApps from websites",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Jaymba/WebappBuilder.git"
+  },
+  "author": "Jay Stoltzfus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaymba/WebappBuilder/issues"
+  },
+  "homepage": "https://github.com/Jaymba/WebappBuilder#readme",
+  "devDependencies": {
+    "electron": "^33.0.2"
+  }
+}
