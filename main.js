@@ -1,5 +1,9 @@
 const { app, BrowserWindow } = require('electron/main')
+const process = require('process')
 
+
+const url = process.env.WebappURL
+console.log(url)
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -8,7 +12,7 @@ const createWindow = () => {
   })
 
   win.removeMenu()
-  win.loadURL('https://tbs.toshiba.com/tbs/')
+  win.loadURL(url)
 }
 
 app.commandLine.appendSwitch("no-proxy-server")
