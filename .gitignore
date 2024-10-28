@@ -130,3 +130,5 @@ dist
 .pnp.*
 *win32*/
 *x64*/
+Temp/
+config.json

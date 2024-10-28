@@ -1,9 +1,13 @@
 const { app, BrowserWindow } = require('electron/main')
 const process = require('process')
+const fs = require('fs')
+const config = require('./config.json')
 
 
-const url = process.env.WebappURL
-console.log(url)
+
+
+
+let url = config.URL
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -31,3 +35,4 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
