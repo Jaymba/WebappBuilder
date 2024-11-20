@@ -1,5 +1,5 @@
 {
-  "name": "webappuilder",
+  "name": "webappbuilder",
   "version": "1.0.0",
   "description": "Builds WebApps from websites",
   "main": "main.js",
