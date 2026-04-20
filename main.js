@@ -22,10 +22,9 @@ const createWindow = () => {
     'width': mainWindowState.width,
     'height': mainWindowState.height
   })
-
   mainWindowState.manage(win);
   win.removeMenu()
-  win.loadURL(url, {userAgent: useragent})
+  win.loadURL(url, { userAgent: useragent })
 }
 
 app.commandLine.appendSwitch("no-proxy-server")
