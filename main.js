@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron/main')
 const process = require('process')
 const fs = require('fs')
+const path = require('path')
 const windowStateKeeper = require('electron-window-state');
 const config = require('./config.json')
 
@@ -20,11 +21,15 @@ const createWindow = () => {
     'x': mainWindowState.x,
     'y': mainWindowState.y,
     'width': mainWindowState.width,
-    'height': mainWindowState.height
+    'height': mainWindowState.height,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
   })
   mainWindowState.manage(win);
   win.removeMenu()
   win.loadURL(url, { userAgent: useragent })
+  win.webContents.openDevTools()
 }
 
 app.commandLine.appendSwitch("no-proxy-server")
