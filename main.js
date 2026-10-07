@@ -29,7 +29,6 @@ const createWindow = () => {
   mainWindowState.manage(win);
   win.removeMenu()
   win.loadURL(url, { userAgent: useragent })
-  win.webContents.openDevTools()
 }
 
 app.commandLine.appendSwitch("no-proxy-server")
