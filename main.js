@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow, session } = require('electron/main')
 const process = require('process')
 const fs = require('fs')
 const path = require('path')
@@ -39,7 +39,11 @@ if (debug) {
 }
 
 app.commandLine.appendSwitch("no-proxy-server")
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  // Start with an empty HTTP cache. A cached copy of a site's old page can point
+  // at script files the site has since replaced, leaving a blank window.
+  // Logins are kept - cookies and local storage are not part of this cache.
+  await session.defaultSession.clearCache()
   createWindow()
 
   app.on('activate', () => {
