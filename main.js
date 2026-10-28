@@ -9,6 +9,8 @@ const config = require('./config.json')
 
 let url = config.URL
 let useragent = config.UserAgent
+// Datto variables arrive as strings, so accept "true" as well as true
+let debug = config.Debug === true || config.Debug === 'true'
 
 
 const createWindow = () => {
@@ -29,6 +31,11 @@ const createWindow = () => {
   mainWindowState.manage(win);
   win.removeMenu()
   win.loadURL(url, { userAgent: useragent })
+}
+
+// Open DevTools on every window, including popups the site opens
+if (debug) {
+  app.on('browser-window-created', (_e, win) => win.webContents.openDevTools())
 }
 
 app.commandLine.appendSwitch("no-proxy-server")
